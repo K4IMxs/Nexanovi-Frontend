@@ -1,0 +1,43 @@
+:root {
+
+    --background:#eaffd4;
+    --surface:#c2dfa4;
+    --surface-raised:#98b677;
+    --on-surface: #96aa82;
+    --on-surface-dark: #657456;
+    --on-surface-muted:#343f28;
+    --text-secondary:#1a3a3b;
+    --outline:#374726;
+
+    --primary:#7A9C56;
+    --primary-pressed:#618f30;
+    --primary-dark:#374726;
+    --secondary:#00908B;
+    --secondary-pressed:#006461;
+    --secondary-muted:#08514e;
+    --secondary-dark:#0f3231;
+    --on-secondary:var(--secondary);
+    --accent:#daf05c;
+    --on-accent:var(--accent);
+    --success:#69B571;
+    --warning:#daf05c;
+    --on-warning:var(--warning);
+    --on-success:var(--success);
+    --on-danger:var(--text-principal);
+
+    --text-heading:var(--text-principal);
+    --text-body:var(--text-principal);
+    --text-muted: var(--text-secondary);
+    --text-inverse:var(--surface-raised);
+    --text-link:var(--primary-pressed);
+    --text-link-hover:var(--primary);
+    --surface-page:var(--background);
+    --surface-card:var(--surface);
+    --surface-sunken:var(--background);
+    --border-subtle:var(--outline);
+    --border-default:var(--outline);
+    --accent-primary:var(--primary);
+    --accent-primary-hover:var(--primary-pressed);
+    --accent-secondary:var(--secondary);
+    --focus-ring:var(--primary);
+}

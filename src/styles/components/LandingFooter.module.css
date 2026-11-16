@@ -1,0 +1,39 @@
+.footer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: var(--space-3);
+    text-align: center;
+    padding: var(--space-8) var(--space-4);
+    border-top: 1px solid var(--outline);
+}
+
+.marca {
+    font-family: var(--font-display);
+    font-weight: var(--weight-bold);
+    color: var(--text-secondary);
+}
+
+.nav {
+    display: flex;
+    gap: var(--space-4);
+}
+
+.link {
+    color: var(--acent-primary-hover);
+    font-size: var(--text-sm);
+    text-decoration: none;
+    transition: 0.5;
+}
+
+.link:hover {
+    transform: scale(1.05);
+    color: var(--text-secondary);
+    transition: 0.5;
+}
+
+.copyright {
+    color: var(--acent-primary-hover);
+    font-size: var(--text-xs);
+    margin: 0;
+}
