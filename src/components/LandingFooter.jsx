@@ -4,14 +4,14 @@ import styles from "../styles/components/LandingFooter.module.css"
 function LandingFooter() {
     return (
         <footer className={styles.footer}>
-            <span className={styles.marca}>Todo-list</span>
+            <span className={styles.marca}>KLOZET</span>
             <nav className={styles.nav}>
                 <Link to="/" className={styles.link}>
-                Inicio</Link>
-                <Link to="/about" className={styles.link}>
-                Sobre</Link>
+                Início</Link>
+                <Link to="/marketplace" className={styles.link}>
+                Marketplace</Link>
                 <Link to="/" className={styles.link}>
-                Minhas Tarefas</Link>
+                Minha loja</Link>
             </nav>
             <p className={styles.copyright}>
                 Desenvolvido por Ryan Oliveira Andrade - Projeto de estudo senac tec

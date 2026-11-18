@@ -46,7 +46,7 @@ function LoginForm() {
     return (
 
         <Card className={styles.card}>
-            <h1 className={styles.title}>Entrar</h1>
+            <h1 className={styles.title}>Bem-vindo de volta</h1>
 
             <form
                 onSubmit={handleSubmit(aoSubmeter)}
@@ -94,7 +94,7 @@ function LoginForm() {
                 </Button>
             </form>
             <p className={styles.footer}>
-                Não tem conta? <Link to='/register'>Cadastre-se</Link>
+                Ainda não tem conta? <Link to='/register'>Criar conta</Link>
             </p>
             <p className={styles.footer}>
                 <Link to='/recuperar-senha'>Esqueci minha senha</Link>

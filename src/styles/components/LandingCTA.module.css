@@ -4,7 +4,12 @@
     align-items: center;
     text-align: center;
     gap: var(--space-5);
+    max-width: 1000px;
+    margin: var(--space-8) auto;
     padding: var(--space-12) var(--space-4);
+    border: 1px solid #d5c4a9;
+    border-radius: var(--radius-lg);
+    background: linear-gradient(120deg, #eee1cd, #f8f3e8 65%, #e8dfcb);
 }
 
 .tittle {
@@ -12,5 +17,6 @@
     font-weight: var(--weight-bold);
     font-size: var(--text-xl);
     margin: 0;
+    color: var(--primary-dark);
 
 }

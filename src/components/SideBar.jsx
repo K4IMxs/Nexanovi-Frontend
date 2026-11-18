@@ -1,12 +1,14 @@
-import { BarChart3, CheckSquare, Home, LogOut } from 'lucide-react'
+import { CheckSquare, HeartHandshake, Home, LogOut, Store, UserRound } from 'lucide-react'
 import { Link, NavLink, useNavigate } from 'react-router-dom' // <-- Adicionado useNavigate
 import { useAuth } from '../context/AuthContext'
 import styles from '../styles/components/Sidebar.module.css'
 
 const ITENS = [
     { rota: '/dashboard', rotulo: 'Painel', icon: Home},
-    { rota: '/tasks', rotulo: 'Tarefas', icon: CheckSquare},
-    { rota: '/analytics', rotulo: 'Analytics', icon: BarChart3},
+    { rota: '/tasks', rotulo: 'Produtos', icon: Store},
+    { rota: '/analytics', rotulo: 'Pedidos', icon: CheckSquare},
+    { rota: '/campaigns', rotulo: 'Campanhas', icon: HeartHandshake},
+    { rota: '/profile', rotulo: 'Perfil da loja', icon: UserRound},
 ]
 
 function Sidebar() {
@@ -21,7 +23,8 @@ function Sidebar() {
     return (
         <nav className={styles.nav} aria-label='Navegação principal'>
             <Link to='/' className={styles.mark}>
-                ToDo List
+                <img src="/Klozet.png" alt="" />
+                <span>KLOZET</span>
             </Link>
             <ul className={styles.list}>
                 {ITENS.map(({ rota, rotulo, icon}) => {

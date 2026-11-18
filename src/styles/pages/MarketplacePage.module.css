@@ -1,0 +1,207 @@
+.wrapper {
+    max-width: 1180px;
+    width: 100%;
+    margin: 0 auto;
+    padding: var(--space-8) var(--space-6);
+}
+
+.hero {
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    gap: var(--space-5);
+    min-height: 260px;
+    padding: var(--space-8);
+    border-radius: var(--radius-lg);
+    background: linear-gradient(115deg, #806d4d, #a9946c 56%, #6f7650);
+    color: #fff;
+    box-shadow: var(--shadow-md);
+}
+
+.hero::after {
+    content: "";
+    position: absolute;
+    right: 10%;
+    top: -120px;
+    width: 340px;
+    height: 340px;
+    border: 1px solid rgba(255,255,255,.18);
+    border-radius: 50%;
+    box-shadow: 0 0 0 36px rgba(255,255,255,.05), 0 0 0 72px rgba(255,255,255,.04);
+    pointer-events: none;
+}
+
+.hero span {
+    font-size: var(--text-sm);
+}
+
+.hero h1 {
+    margin: 8px 0 0;
+    font-size: clamp(var(--text-xl), 4vw, var(--text-xll));
+    line-height: 1.12;
+}
+
+.hero label {
+    position: relative;
+    z-index: 1;
+    display: flex;
+    width: min(420px, 45%);
+    background: var(--surface);
+    border-radius: var(--radius-control);
+    overflow: hidden;
+    box-shadow: var(--shadow-sm);
+}
+
+.hero input {
+    flex: 1;
+    min-width: 0;
+    border: 0;
+    outline: 0;
+    padding: 14px;
+}
+
+.hero input:focus-visible {
+    outline: 3px solid rgba(167,107,67,.62);
+    outline-offset: -3px;
+}
+
+.hero button {
+    border: 0;
+    background: var(--primary);
+    color: #fff;
+    padding: 0 18px;
+    transition: background var(--duration-fast);
+}
+
+.hero button:hover {
+    background: var(--primary-pressed);
+}
+
+.categories {
+    display: flex;
+    gap: 8px;
+    margin: 24px 0;
+    overflow-x: auto;
+    padding: 2px 2px 6px;
+}
+
+.categories button {
+    flex: 0 0 auto;
+    border: 1px solid var(--outline);
+    background: var(--surface);
+    border-radius: var(--radius-pill);
+    padding: 9px 16px;
+    color: var(--text-secondary);
+    transition: background var(--duration-fast), color var(--duration-fast), transform var(--duration-fast);
+}
+
+.categories button:hover {
+    transform: translateY(-1px);
+    background: #eee3d2;
+}
+
+.categories .active {
+    background: var(--primary);
+    color: #fff;
+    border-color: var(--primary);
+}
+
+.wrapper > h2 {
+    letter-spacing: .12em;
+    color: var(--primary-dark);
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: var(--space-4);
+}
+
+.card {
+    min-width: 0;
+    border: 1px solid var(--outline);
+    border-radius: var(--radius-md);
+    background: var(--surface);
+    padding: var(--space-3);
+    box-shadow: var(--shadow-sm);
+    transition: transform var(--duration-base), box-shadow var(--duration-base), border-color var(--duration-base);
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--shadow-md);
+    border-color: var(--border-hover);
+}
+
+.photo {
+    height: 190px;
+    display: grid;
+    place-items: center;
+    text-align: center;
+    border-radius: var(--radius-sm);
+    background: linear-gradient(145deg, #e4dccb, #b9a782);
+    color: var(--primary-dark);
+    font-weight: var(--weight-bold);
+}
+
+.card h3 {
+    font-size: var(--text-base);
+    margin: 12px 0 4px;
+}
+
+.card strong {
+    display: block;
+    color: var(--primary);
+}
+
+.card button {
+    width: 100%;
+    margin-top: 12px;
+    border: 1px solid transparent;
+    border-radius: var(--radius-control);
+    background: #eee5d6;
+    padding: 10px;
+    color: var(--primary-dark);
+    font-weight: var(--weight-semibold);
+    transition: background var(--duration-fast), color var(--duration-fast);
+}
+
+.card button:hover {
+    background: var(--primary);
+    color: #fff;
+}
+
+@media (max-width: 900px) {
+    .grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .hero {
+        align-items: flex-start;
+        flex-direction: column;
+    }
+
+    .hero label {
+        width: 100%;
+    }
+}
+
+@media (max-width: 560px) {
+    .wrapper {
+        padding: var(--space-6) var(--space-4);
+    }
+
+    .grid {
+        grid-template-columns: 1fr;
+    }
+
+    .hero {
+        padding: var(--space-5);
+    }
+
+    .categories {
+        margin: 18px -4px;
+    }
+}

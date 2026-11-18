@@ -28,6 +28,6 @@
 }
  
 .description {
-    color: var(--on-waring);
+    color: var(--text-secondary);
     margin: 0 0 var(--space-2);
 }

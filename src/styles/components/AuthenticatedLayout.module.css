@@ -1,17 +1,17 @@
 .wrapper {
-    height: 100vh;
+    min-height: 100vh;
+    min-height: 100dvh;
     display: flex;
     flex-direction: column;
 }
  
 .content {
     flex: 1;
- 
     min-height: 0;
     overflow-y: auto;
     display: flex;
     flex-direction: column;
- 
+    background: radial-gradient(ellipse at 70% 0%, rgba(201,177,139,.10), transparent 34rem), var(--background);
     padding-bottom: 96px;
 }
  

@@ -3,20 +3,20 @@ import styles from '../styles/components/LandingFeatures.module.css'
 
 const FUNCIONALIDADES = [
     {
-        titulo: "Gerencie suas Tarefas", 
-        descricao: "Crie, Edite, e Conclua suas Tarefas com poucos cliques."
+        titulo: "Venda suas peças",
+        descricao: "Transforme roupas que você não usa em novas oportunidades."
     },
     {
-        titulo: "Prioridade e prazo", 
-        descricao: "Organize suas tarefas por critérios e datas."
+        titulo: "Compre com intenção",
+        descricao: "Encontre estilos únicos em um marketplace de moda circular."
     },
     {
-        titulo: "Busque filtros", 
-        descricao: "Acompanhe de perto a evolução das suas tarefas."
+        titulo: "Doe e faça diferença",
+        descricao: "Ajude campanhas e organizações com roupas em bom estado."
     },
     {
-        titulo: "Analytics de produtividade", 
-        descricao: "Acompanhe quantas tarefas você concluiu e quanto foi sua taxa de conclusão"
+        titulo: "Acompanhe sua loja",
+        descricao: "Gerencie produtos, pedidos e o desempenho do seu negócio."
     },
 ]
 
@@ -25,7 +25,7 @@ function LandingFeatures() {
         <>
     <section id="funcionalidades" className={styles.LandingFeatures}>
         <h2 className={styles.tittle}>
-            Tudo que você precisa para manter seu ritmo organizado
+            Tudo para renovar seu guarda-roupa
         </h2>
         <div className={styles.LandingGrade}>
             {FUNCIONALIDADES.map(({titulo, descricao}) => {

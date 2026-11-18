@@ -34,7 +34,7 @@
   font-family: var(--font-display);
   font-weight: var(--weight-bold);
   font-size: var(--text-md);
-  color: var(--secondary-muted);
+  color: var(--primary-dark);
   margin: 0;
 }
 
@@ -42,7 +42,7 @@
   appearance: none;
   background: var(--surface);
   border: 1px solid var(--outline);
-  color: var(--on-surface);
+  color: var(--text-secondary);
   width: 32px;
   height: 32px;
   border-radius: var(--radius-full);

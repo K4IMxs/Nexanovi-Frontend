@@ -2,8 +2,8 @@
 
 
 :root{
-    --font-display:'open-sans', ui-rounded, system-ui, sans-serif;
-    --font-body:'arial', ui-sans-serif, system-ui, sans-serif;
+    --font-display:'Tenor Sans', ui-rounded, system-ui, sans-serif;
+    --font-body:Arial, ui-sans-serif, system-ui, sans-serif;
     --font-body-2: 'Tenor Sans', ui-rounded, system-ui, sans-serif;
 
     --text-xs: 0.75rem;
@@ -12,9 +12,11 @@
     --text-md:1.125rem;
     --text-lg:1.375rem;
     --text-xl:1.75rem;
+    --text-2xl: 2.5rem;
     --text-xll: 2.25rem;
     --text-xlll: 3rem;
-    --leading-thigh: 1,2;
+    --leading-tight: 1.2;
+    --leading-thigh: 1.2;
     --leading-normal: 1.5;
     --leading-relaxed: 1.65;
     --weight-regular:400;

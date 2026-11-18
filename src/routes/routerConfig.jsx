@@ -12,6 +12,11 @@ import { NotFoundPage } from "../Pages/NotFoundPage";
 import { RecoverPasswordPage } from "../Pages/RecoverPasswordPage";
 import { About } from '../Pages/About';
 import { TaskPage } from '../Pages/TaskPage'
+import { CampaignsPage } from '../Pages/CampaignsPage'
+import { StoreProfilePage } from '../Pages/StoreProfilePage'
+import { MarketplacePage } from '../Pages/MarketplacePage'
+import { DonationsPage } from '../Pages/DonationsPage'
+import { CartPage } from '../Pages/CartPage'
 
 import { RequireAuth } from "./guards/RequireAuth";
 
@@ -23,13 +28,16 @@ const routerConfig = [
             {path: "/", element: <LandingPage />},
             {path: "/login", element: <LoginPage />},
             {path: "/register", element: <RegisterPage />},
-            {path: "/about", element: <About /> },    
+            {path: "/about", element: <MarketplacePage /> },
+            {path: "/marketplace", element: <MarketplacePage /> },
+            {path: "/donations", element: <DonationsPage /> },
+            {path: "/cart", element: <CartPage /> },
             {path: "RecoverPassword", element: <RecoverPasswordPage />},
             {path: "*", element: <NotFoundPage />},
         ]
      },
     {
-        Element: <RequireAuth />,
+        element: <RequireAuth />,
         errorElement: <RouterErrorBoundary />,
         children: [
             {
@@ -38,6 +46,8 @@ const routerConfig = [
               {path: '/dashboard', element: <DashboardPage /> },
               {path: '/tasks', element: <TaskPage /> },
               {path: '/analytics', element: <AnalyticsPage /> },
+              {path: '/campaigns', element: <CampaignsPage /> },
+              {path: '/profile', element: <StoreProfilePage /> },
             ],
           },
         ],

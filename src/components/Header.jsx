@@ -5,12 +5,13 @@ function Header() {
     const { pathname } = useLocation()
     return(
         <header className={styles.header}>
-            <Link to='/' className={styles.marca}>Todo List</Link>
+            <Link to='/' className={styles.marca}>
+                <img src="/Klozet.png" alt="" className={styles.logoMark} />
+                <span>KLOZET</span>
+            </Link>
             <nav className={styles.nav} aria-label='Navegação principal'>
-                <Link to="" className={styles.link}>Inicio</Link>
-                <Link to="/about" className={styles.link}>Sobre</Link>
                 {pathname !== '/login' ? (
-                    <Link to="/login" className={styles.entrar}>Login</Link>
+                    <Link to="/login" className={styles.entrar}>Entrar</Link>
                     ):null}
             </nav>
         </header>
