@@ -3,6 +3,5 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    padding: clamp(24px, 6vw, 72px) var(--space-4);
-    background: radial-gradient(ellipse at 50% 42%, rgba(201,177,139,.2), transparent 34rem);
+    padding: var(--space-6) var(--space-4);
 }

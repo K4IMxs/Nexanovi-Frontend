@@ -1,15 +1,13 @@
 .sectionBenefits {
-    max-width: 760px;
+    max-width: var(--container-narrow);
     margin: 0 auto;
-    padding: var(--space-8) var(--space-6);
+    padding: var(--space-8) var(--space-4);
 }
 
 .Card {
     display: flex;
     flex-direction: column;
     gap: var(--space-4);
-    border-color: #d7c7ae;
-    background: linear-gradient(145deg, #fffdf9, #f8f2e8);
 }
 
 .Tittle {
@@ -18,7 +16,6 @@
     font-size: var(--text-lg);
     margin: 0;
     text-align: center;
-    color: var(--primary-dark);
 }
 
 .List {
@@ -45,6 +42,6 @@
     align-items: center;
     justify-content: center;
     border-radius: var(--radius-full);
-    background: #e4eadc;
-    color: var(--secondary-dark);
+    background: var(--sucess);
+    color: var(--text-principal);
 }

@@ -13,16 +13,16 @@
     width: 40px;
     height: 40px;
     border-radius: var(--radius-full);
-    background: var(--surface-raised);
-    color: var(--primary-dark);
+    background: var(--background);
+    color: var(--on-surface-muted);
 }
 
 .value {
     font-family: var(--font-display);
     font-weight: var(--weight-bold);
-    font-size: var(--text-xl);
+    font-size: var(--text-x);
     line-height: var(--leading-tight);
-    color: var(--primary-dark);
+    color: var(--on-surface);
 }
 
 .textoGroup {
@@ -32,12 +32,10 @@
     gap: var(--space-2);
 }
 
-.label {
+label {
     font-size: var(--text-sm);
-    color: var(--text-secondary);
+    color: var(--on-surface-muted);
 }
-
-.neutral {color: var(--primary-dark);}
 
 .primary {color: var(--primary);}
 

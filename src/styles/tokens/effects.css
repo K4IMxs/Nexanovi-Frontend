@@ -1,19 +1,18 @@
 :root{
-    --radius-clay-sm: 12px;
-    --radius-clay-md: 18px;
-    --radius-clay-lg: 24px;
+    --radius-clay-sm: 10px;
+    --radius-clay-md: 16px;
+    --radius-clay-lg: 22px;
     --radius-full: 999px;
 
     --radius-sm: var(--radius-clay-sm);
     --radius-md: var(--radius-clay-md);
     --radius-lg: var(--radius-clay-lg);
     --radius-pill: var(--radius-full);
-    --radius-control: 10px;
 
-    --shadow-clay-sm: 0 2px 6px rgba(74,58,45,.05), 0 1px 2px rgba(74,58,45,.04);
-    --shadow-clay-md: 0 8px 24px rgba(74,58,45,.08), 0 2px 5px rgba(74,58,45,.04);
-    --shadow-clay-lg: 0 16px 42px rgba(74,58,45,.10), 0 4px 12px rgba(74,58,45,.05);
-    --shadow-pressed: 0 2px 6px rgba(74,58,45,.12);
+    --shadow-clay-sm: 0 2px 8px rgba(52, 72, 45, 0.07);
+    --shadow-clay-md: 0 8px 24px rgba(52, 72, 45, 0.10);
+    --shadow-clay-lg: 0 16px 40px rgba(52, 72, 45, 0.14);
+    --shadow-pressed: inset 0 2px 5px rgba(52, 72, 45, 0.18);
 
     --shadow-sm: var(--shadow-clay-sm);
     --shadow-md: var(--shadow-clay-md);
@@ -26,46 +25,16 @@
     --duration-slow: 300ms;
 }
 *{box-sizing: border-box;}
-html { scroll-behavior: smooth; }
-body {
-    min-width: 320px;
-    background:
-        radial-gradient(ellipse at 12% 0%, rgba(201,177,139,.14), transparent 34rem),
-        var(--surface-page);
-    color: var(--text-body);
+body {background:var(--surface-page);
+    color: var(--text-link);
     font-family: var(--font-body);
     margin: 0;
-    -webkit-font-smoothing: antialiased;
-    text-rendering: optimizeLegibility;
 }
 a{
     color: var(--text-link-hover);
     text-decoration: none;
     font-weight: var(--weight-semibold);
-    transition: color var(--duration-fast) var(--ease-standard);
 }
 a:hover{
-    color: var(--primary-pressed);
-}
-button, input, select, textarea {
-    font: inherit;
-}
-button {
-    cursor: pointer;
-}
-button:focus-visible, a:focus-visible, input:focus-visible, select:focus-visible, textarea:focus-visible {
-    outline: 3px solid rgba(167,107,67,.62);
-    outline-offset: 3px;
-}
-::selection {
-    background: rgba(150,80,47,.18);
-    color: var(--primary-dark);
-}
-@media (prefers-reduced-motion: reduce) {
-    *, *::before, *::after {
-        scroll-behavior: auto !important;
-        animation-duration: .01ms !important;
-        animation-iteration-count: 1 !important;
-        transition-duration: .01ms !important;
-    }
+    color: var(--text-link-hover);
 }

@@ -8,7 +8,7 @@ import { Button } from './Button'
 import { Card } from './Card'
 import { Input } from './Input'
 import { TermsUseModal } from './TermsUseModal'
-import styles from '../styles/components/RegisterForm.module.css'
+import styles from '../styles/components/registerForm.module.css'
 
 const esquema = z
     .object({
@@ -63,7 +63,7 @@ function RegisterForm() {
 
     return (
         <Card className={styles.card}>
-            <h1 className={styles.title}>Criar conta</h1>
+            <h1 className={styles.title}>Criar Conta</h1>
 
             <form
                 onSubmit={handleSubmit(aoSubmeter)}
@@ -119,7 +119,7 @@ function RegisterForm() {
                                 termos de uso
                             </button>
 
-                            {''} da Klozet
+                            {''} do ToDo List
                         </span>
                     </label>
 

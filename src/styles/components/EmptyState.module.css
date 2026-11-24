@@ -15,16 +15,16 @@
     width: 56px;
     height: 56px;
     border-radius: var(--radius-full);
-    background: var(--surface-raised);
+    background: var(--on-surface);
     box-shadow: var(--shadow-sm);
     color: var(--on-surface-muted);
 }
 
-.title {
+title {
     font-family: var(--font-display);
     font-weight: var(--weight-semibold);
     font-size: var(--text-md);
-    color: var(--text-heading);
+    color: var(--on-surface);
     margin: 0;
 }
 

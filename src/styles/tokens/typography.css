@@ -2,8 +2,8 @@
 
 
 :root{
-    --font-display:'Tenor Sans', ui-rounded, system-ui, sans-serif;
-    --font-body:Arial, ui-sans-serif, system-ui, sans-serif;
+    --font-display: 'Tenor Sans', 'Trebuchet MS', ui-rounded, system-ui, sans-serif;
+    --font-body: Inter, 'Segoe UI', Arial, ui-sans-serif, system-ui, sans-serif;
     --font-body-2: 'Tenor Sans', ui-rounded, system-ui, sans-serif;
 
     --text-xs: 0.75rem;
@@ -12,11 +12,16 @@
     --text-md:1.125rem;
     --text-lg:1.375rem;
     --text-xl:1.75rem;
-    --text-2xl: 2.5rem;
+    --text-1g:1.125rem;
+    --text-2xl:2rem;
+    --text-3xl:3.25rem;
     --text-xll: 2.25rem;
     --text-xlll: 3rem;
-    --leading-tight: 1.2;
-    --leading-thigh: 1.2;
+    --text-x:1.75rem;
+    --text-x1:1.375rem;
+    --leading-tight:1.15;
+    --leading-thigh:1.2;
+    --leading-thigh: 1,2;
     --leading-normal: 1.5;
     --leading-relaxed: 1.65;
     --weight-regular:400;

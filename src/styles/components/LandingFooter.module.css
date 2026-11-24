@@ -6,14 +6,12 @@
     text-align: center;
     padding: var(--space-8) var(--space-4);
     border-top: 1px solid var(--outline);
-    background: rgba(238,227,210,.42);
 }
 
 .marca {
     font-family: var(--font-display);
     font-weight: var(--weight-bold);
-    color: var(--primary-dark);
-    letter-spacing: .12em;
+    color: var(--text-secondary);
 }
 
 .nav {
@@ -22,18 +20,20 @@
 }
 
 .link {
-    color: var(--text-secondary);
+    color: var(--acent-primary-hover);
     font-size: var(--text-sm);
     text-decoration: none;
-    transition: color var(--duration-fast) var(--ease-standard);
+    transition: 0.5;
 }
 
 .link:hover {
-    color: var(--primary);
+    transform: scale(1.05);
+    color: var(--text-secondary);
+    transition: 0.5;
 }
 
 .copyright {
-    color: var(--text-secondary);
+    color: var(--acent-primary-hover);
     font-size: var(--text-xs);
     margin: 0;
 }

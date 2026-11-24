@@ -48,8 +48,8 @@ function About() {
 
             <Card className={styles.Card}>
                 <p className={styles.description}>
-                    A Klozet é uma plataforma de moda circular desenvolvida com React e Vite -
-                    marketplace, cadastro e login, vendas, doações e um painel de resumo da
+                    Esta e uma aplicacão de lista de tarefas (Todo List) desenvolvida com React e Vite -
+                    cadastro e login, tarefas com prioridade e prazo, um painel de resumo e um analytics de
                     produtividade. Foi criada com o objetivo de praticar conceitos fundamentais do React:
                 </p>
 

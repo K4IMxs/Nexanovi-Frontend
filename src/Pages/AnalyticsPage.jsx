@@ -1,46 +1,105 @@
-import { Search } from 'lucide-react'
+import { Flame, Percent } from 'lucide-react'
+import { Card } from '../components/Card'
+import { PageStateBoundary } from '../components/PageStateBoundary'
+import { PriorityBadge } from '../components/PriorityBadge'
+import { StatCard } from '../components/StatCard'
+import { useTasks } from '../hooks/useTasks'
 import styles from '../styles/pages/AnalyticsPage.module.css'
-
-const pedidos = [
-  { numero: '#34567', cliente: 'Ana Maria', item: 'Vestido Floral M', data: '07/09/2026', valor: 'R$ 70,99', status: 'Pendente' },
-  { numero: '#12345', cliente: 'Júlia Santos', item: 'Jaqueta Jeans P', data: '07/08/2026', valor: 'R$ 40,94', status: 'A caminho' },
-  { numero: '#90908', cliente: 'Júlio César', item: 'Camisa Social G', data: '15/10/2025', valor: 'R$ 49,00', status: 'Cancelado' },
-  { numero: '#51186', cliente: 'Sara Martins', item: 'Jaqueta Jeans P', data: '15/10/2025', valor: 'R$ 40,94', status: 'Enviado' },
-]
-
-function AnalyticsPage() {
-  return (
-    <div className={styles.wrapper}>
-      <header className={styles.cabecalho}>
-        <h1>Pedidos</h1>
-        <p>Acompanhe e gerencie as compras feitas na sua vitrine.</p>
-      </header>
-      <div className={styles.stats}>
-        <article><strong>3</strong><span>Pendentes</span></article>
-        <article><strong>2</strong><span>A caminho</span></article>
-        <article><strong>18</strong><span>Entregues</span></article>
-        <article><strong>R$ 1.249,90</strong><span>Vendas do mês</span></article>
-      </div>
-      <div className={styles.toolbar}>
-        <label><Search size={18} /><input placeholder="Buscar por cliente ou nº do pedido..." /></label>
-        <select aria-label="Período"><option>Últimos 30 dias</option><option>Últimos 7 dias</option></select>
-      </div>
-      <div className={styles.tableWrap}>
-        <table>
-          <thead><tr><th>Pedidos</th><th>Cliente</th><th>Item</th><th>Data</th><th>Valor</th><th>Status</th><th></th></tr></thead>
-          <tbody>
-            {pedidos.map((pedido) => (
-              <tr key={pedido.numero}>
-                <td>{pedido.numero}</td><td>{pedido.cliente}</td><td>{pedido.item}</td><td>{pedido.data}</td><td>{pedido.valor}</td>
-                <td><span className={`${styles.status} ${styles[pedido.status.toLowerCase().replace(' ', '')]}`}>{pedido.status}</span></td>
-                <td><button type="button">Detalhes</button></td>
-              </tr>
-            ))}
-          </tbody>
-        </table>
-      </div>
-    </div>
-  )
+const DIA_JANELA = 7
+const FORMATADOR_DIA_SEMANA = new Intl.DateTimeFormat ('pt-BR', { weekday: 'short' })
+const ORDEM_PRIORIDADE = ['urgente', 'alta', 'media', 'baixa']
+function chaveDiaLocal(data) {
+    return `${data.getFullYear()}-${String(data.getMonth() + 1).padStart(2, '0')}-${String(data.getDate()).padStart(2, '0')}`
 }
-
-export { AnalyticsPage }
+function ultimosDias (n) {
+    const hoje = new Date()
+    hoje.setHours(0, 0, 0, 0)
+    return Array.from({ length: n }, (_, i) => {
+        const dia = new Date(hoje)
+        dia.setDate(dia.getDate() - (n - 1 - i))
+        return dia
+    })
+}
+function concluidasPorDia ( tasks, dias ) {
+    const contagem = new Map(dias.map((dia) => [chaveDiaLocal(dia), 0]))
+    tasks.forEach((tasks) => {
+        if (!tasks.concluidoEm) return
+        const chave = chaveDiaLocal(new Date(tasks.concluidoEm))
+        if (contagem.has(chave)) {
+            contagem.set(chave, contagem.get(chave) +1)
+        }
+    })
+    return dias.map ((dia) => ({
+        chave: chaveDiaLocal(dia),
+        label: FORMATADOR_DIA_SEMANA.format(dia),
+        quantidade: contagem.get(chaveDiaLocal(dia)),
+    }))
+}
+function pendentesPorPrioridade(tasks) {
+    const pendentes = tasks.filter((task) => task.status === 'pendente')
+    return ORDEM_PRIORIDADE.map((prioridade) => ({
+        prioridade,
+        quantidade: pendentes.filter((task) => task.prioridade === prioridade).length,
+    }))
+}
+function AnalyticsPage() {
+    const { dado: tasks, carregando, erro, recarregar } = useTasks()
+    const todas = tasks ?? []
+    const total = todas.length
+    const concluidas = todas.filter((task) => task.status === 'concluida').length
+    const taxaConclusao = total > 0 ? Math.round((concluidas / total) * 100) : 0
+    const dias = ultimosDias(DIA_JANELA)
+    const porDia = concluidasPorDia(todas, dias)
+    const concluidasNaJanela = porDia.reduce((soma, dia) => soma + dia.quantidade, 0)
+    const maiorPorDia =  Math.max(1, ...porDia.map((dia) => dia.quantidade))
+    const porPrioridade = pendentesPorPrioridade(todas)
+    const maiorPorPrioridade =  Math.max(1, ...porPrioridade.map((item) => item.quantidade))
+    return (
+        <div className={styles.wrapper}>
+            <div className={styles.cabecalho}>
+                <h1 className={styles.titulo}>Analytics</h1>
+                <p className={styles.subtitulo}>Sua produtividade em números.</p>
+            </div>
+            <PageStateBoundary
+                carregando={carregando}
+                erro={erro}
+                recarregar={recarregar}
+                mensagemCarregando="Calculando suas estatísticas..."
+            >
+                <div className={styles.stats}>
+                    <StatCard icon={Percent} label="Taxa de conclusão" value={`${taxaConclusao}%` } tone="primary" />
+                    <StatCard icon={Flame} label="Concluídas em 7 dias" value={concluidasNaJanela} tone="success" />
+                </div>
+                <Card className={styles.card}>
+                    <h2 className={styles.cardTitulo}>Concluídas por dia</h2>
+                    <div className={styles.grafico} role="img" aria-label="Gráfico de tarefas concluídas nos últimos 7 dias">
+                        {porDia.map((dia) => (
+                            <div key={dia.chave} className={styles.coluna}>
+                                <span className={styles.colunaValor}>{dia.quantidade > 0 ? dia.quantidade : ''}</span>
+                                <div className={styles.barra} style={{ height: `${(dia.quantidade / maiorPorDia) * 100}%` }} />
+                                <span className={styles.colunaLabel}>{dia.label}</span>
+                            </div>
+                        ))}
+                    </div>
+                </Card>
+                <Card className={styles.card}>
+                    <h2 className={styles.cardTitulo}>Pendentes por prioridade</h2>
+                    <div className={styles.linhasPrioridade}>
+                        {porPrioridade.map(({ prioridade, quantidade }) => (
+                            <div key={prioridade} className={styles.linhaPrioridade}>
+                                <PriorityBadge prioridade={prioridade} />
+                                <div className={styles.trilha}>
+                                    <div
+                                        className={styles.trilhaBarra}
+                                        style={{ width: `${( quantidade/maiorPorPrioridade) * 100}%` }}
+                                    />
+                                </div>
+                                <span className={styles.linhaQuantidade}>{quantidade}</span>
+                            </div>
+                        ))}
+                    </div>
+                </Card>
+            </PageStateBoundary>
+        </div>
+    )
+} export { AnalyticsPage }

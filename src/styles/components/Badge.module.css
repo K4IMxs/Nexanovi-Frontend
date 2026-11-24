@@ -9,26 +9,26 @@
 }
 
 .neutral {
-    background: #eee3d2;
-    color: var(--primary-dark);
+    background: var(--primary);
+    color: var(--on-surface-muted);
 }
 
 .primary {
     background: var(--primary);
-    color: #fff;
+    color: var(--on-surface-muted);
 }
 
 .secondary {
-    background: #e4e9dc;
-    color: var(--secondary-dark);
+    background: var(--primary);
+    color: var(--on-surface-muted);
 }
 
 .danger {
-    background: var(--status-danger-bg);
-    color: var(--status-danger-text);
+    background: var(--primary);
+    color: var(--on-surface-muted);
 }
 
 .success {
-    background: #e1ebdd;
-    color: var(--status-success-text);
+    background: var(--primary);
+    color: var(--on-surface-muted);
 }

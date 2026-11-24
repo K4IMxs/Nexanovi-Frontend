@@ -3,13 +3,13 @@ import { Navigate, Outlet } from "react-router-dom";
 import { useAuth } from "../../context/AuthContext";
  
 function RequireAuth() {
-    const { authenticated, loading } = useAuth()
+    const { autenticado, carregando } = useAuth()
  
-    if (loading) {
+    if (carregando) {
         return null
     }
  
-    if (!authenticated) {
+    if (!autenticado) {
         return <Navigate to='/login' replace />
     }
  

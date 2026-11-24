@@ -9,8 +9,8 @@ function TaskFilters({ filtros, onChangeFiltros }) {
       <div className={styles.buscaWrapper}>
         <Search className={styles.buscaIcon} size={16} aria-hidden="true" />
         <Input
-          placeholder="Pesquisar produtos..."
-          aria-label="Pesquisar produtos"
+          placeholder="Pesquisar tarefas (mínimo 3 letras)..."
+          aria-label="Pesquisar tarefas"
           value={filtros.busca}
           onChange={(evento) => onChangeFiltros({ busca: evento.target.value })}
           className={styles.busca}

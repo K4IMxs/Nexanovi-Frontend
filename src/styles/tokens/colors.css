@@ -1,42 +1,32 @@
 :root {
+    --background: #edf4e8;
+    --surface: #ffffff;
+    --surface-raised: #f7faf4;
+    --on-surface: #dce8d2;
+    --on-surface-dark: #4b5d43;
+    --on-surface-muted: #263424;
+    --text-principal: #243128;
+    --text-secondary: #667267;
+    --outline: #d7e0d1;
 
-    --background:#f4eee3;
-    --surface:#fffdf9;
-    --surface-raised:#eee3d2;
-    --surface-warm:#f8f2e8;
-    --surface-hover:#f5ecdf;
-    --status-success-bg:#e8efd8;
-    --status-success-text:#405a33;
-    --status-warning-bg:#f5e8cb;
-    --status-warning-text:#704e20;
-    --status-danger-bg:#f3ddd8;
-    --status-danger-text:#823c32;
-    --status-info-bg:#dde4ed;
-    --status-info-text:#405877;
-    --border-hover:#c6a889;
-    --on-surface:#ede3d1;
-    --on-surface-dark:#5f583f;
-    --on-surface-muted:#4a3a2d;
-    --text-secondary:#766b5b;
-    --outline:#dfd3c0;
-    --text-principal:#3f392f;
-
-    --primary:#96502f;
-    --primary-pressed:#783c25;
-    --primary-dark:#4a3a2d;
-    --secondary:#777b45;
-    --secondary-pressed:#626638;
-    --secondary-muted:#e3e1c9;
-    --secondary-dark:#414728;
-    --on-secondary:var(--secondary);
-    --accent:#b8aa78;
-    --on-accent:var(--accent);
-    --success:#547b4d;
-    --warning:#b67832;
-    --danger:#a33f32;
-    --on-warning:var(--warning);
-    --on-success:var(--success);
-    --on-danger:var(--text-principal);
+    --primary: #66884a;
+    --primary-pressed: #526f3b;
+    --primary-dark: #34472d;
+    --secondary: #087d78;
+    --secondary-pressed: #056865;
+    --secondary-muted: #3e7773;
+    --secondary-dark: #173e3b;
+    --on-secondary: #ffffff;
+    --accent: #dce95c;
+    --on-accent: #34472d;
+    --success: #4e9658;
+    --warning: #d9a62e;
+    --danger: #c95757;
+    --back: #243128;
+    --sucess: #4e9658;
+    --on-warning: #4b3a10;
+    --on-success: #ffffff;
+    --on-danger: #ffffff;
 
     --text-heading:var(--text-principal);
     --text-body:var(--text-principal);
@@ -52,5 +42,5 @@
     --accent-primary:var(--primary);
     --accent-primary-hover:var(--primary-pressed);
     --accent-secondary:var(--secondary);
-    --focus-ring:#a76b43;
+    --focus-ring:var(--primary);
 }
